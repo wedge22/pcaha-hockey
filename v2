@@ -1,0 +1,25 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from bs4 import BeautifulSoup
+
+#launch url
+url = "https://games.pcaha.ca/teams/4326"
+
+#create a new Firefox session
+driver = webdriver.Firefox()
+driver.implicitly_wait(30)
+driver.get(url)
+
+#After opening the url above, Selenium finds the table with the schedule
+games = driver.find_elements_by_id("table-responsive")
+
+#Selenium hands the page source to Beautiful Soup
+soupsource=BeautifulSoup(driver.page_source, 'lxml')
+soupsource.prettify()
+
+#Beautiful Soup grabs the class gamelist-row
+tables = soupsource.find_all("tr", class_="gamelist-row")
+
+# prints out the text only
+for x in tables:
+    print(x.text)
