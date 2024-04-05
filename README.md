@@ -1,3 +1,5 @@
+# This project is no longer being worked on #
+
 # pcaha-hockey
 This simple python project is related to amateur hockey for my sons league, I want to make it easier for the Managers to enter the scheduled games into the Sports Engine application without having to pay the $500 API access costs associated with the Sports Engine app. 
 
